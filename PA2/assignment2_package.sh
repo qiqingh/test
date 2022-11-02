@@ -3,7 +3,7 @@
 #Title           :assignment2_package.sh
 #description     :This script will package assignment2 for submission.
 #Author          :Swetank Kumar Saha <swetankk@buffalo.edu>
-#Version         :1.0
+#Version         :2.0
 #===================================================================================================
 
 
@@ -97,20 +97,10 @@ else
     exit 0
 fi
 
-echo
-echo "Analysis file: "
-FILE=`find ./$ubitname/ -name "Analysis_Assignment2.pdf"`
-if [ -n "$FILE" ];
-then
-        echo "File $FILE exists"
-else
-        echo "Missing Analysis_Assignment2.pdf or file named incorrectly!"
-        exit 0
-fi
 
 echo
 echo "Packaging ..."
 cd ${ubitname}/ && tar --exclude='./scripts' -zcvf ../${ubitname}_pa2.tar * && cd ..
 echo "Done!"
 echo "IMPORTANT: Your submission is NOT done!"
-echo "You need to use the submit_cse489/submit_cse589 (available on CSE servers) script to submit this tarball."
+echo "You need to submit this tarball along with your report to the UBLearns."
